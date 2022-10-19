@@ -41,17 +41,14 @@ class Game:
 
             for celda in self.snake.body:
                 #Dibujar un rectángulo
-                pygame.draw.rect(self.screen, self.snake.color, (celda[0],celda[1],10,10))
-                
-                
-            if self.food.status=="inanctive":
-                self.food.putFood()
-                pygame.draw.rect(self.screen, self.food.color, (,10,10))
-                self.food.status="active"
+                pygame.draw.rect(self.screen, self.snake.color, (celda[0],celda[1],10,10))              
+            
             
             self.checkKeys()
 
             self.snake.move()
+            
+            self.food.putFood(self.width,self.height)
 
             pygame.display.flip()
             
