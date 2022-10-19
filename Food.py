@@ -14,5 +14,10 @@ class Food:
         #Generate a random x
         self.x=random.randint(0, x_max)
         self.y=random.randint(0, y_max)
+        
+                        
+        if self.status=="inanctive":
+            pygame.draw.rect(self.screen, self.food.color, (self.x,self.y,10,10))
+            self.status="active"
 
         return(self.x, self.y)
